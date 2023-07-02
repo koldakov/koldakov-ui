@@ -1,0 +1,284 @@
+{
+  "en-US": {
+    "translation": {
+      "NavbarBrand": {
+        "text": "Koldakov"
+      },
+      "DownloadCV": {
+        "text": "Download CV"
+      },
+      "Language": {
+        "text": "Language"
+      },
+      "LanguageNameEN": {
+        "text": "English"
+      },
+      "LanguageNameRU": {
+        "text": "Russian"
+      },
+      "HomeProfileTitle": {
+        "text": "Ivan Koldakov"
+      },
+      "HomeProfileDescription": {
+        "text": "Not the one who throws the code to the main and forgets about it. I enjoy the whole flow: development, tests, deployment, support. Prefer clean git history, but I'm not a fanatic."
+      },
+      "HomeProfileSkills": {
+        "text": "Some skills"
+      },
+      "Skills": {
+        "text": "Skills"
+      },
+      "Experience": {
+        "text": "Experience"
+      },
+      "Education": {
+        "text": "Education"
+      },
+      "Python": {
+        "text": "Python"
+      },
+      "Django": {
+        "text": "Django"
+      },
+      "AWS": {
+        "text": "Amazon Web Services (AWS)"
+      },
+      "RabbitMQ": {
+        "text": "RabbitMQ"
+      },
+      "Git": {
+        "text": "Git"
+      },
+      "Opsgenie": {
+        "text": "Opsgenie"
+      },
+      "Elasticsearch": {
+        "text": "Elasticsearch"
+      },
+      "MongoDB": {
+        "text": "MongoDB"
+      },
+      "CICD": {
+        "text": "CI/CD"
+      },
+      "CleanCoding": {
+        "text": "Clean Coding"
+      },
+      "Docker": {
+        "text": "Docker"
+      },
+      "Interviewing": {
+        "text": "Interviewing"
+      },
+      "RedAcre": {
+        "text": "Red Acre, LTD"
+      },
+      "RedAcreDescription": {
+        "text": "Currently working on multiple microservices. Main project is a Payment Gateway, which we built from scratch with a team."
+      },
+      "AtomSecurity": {
+        "text": "Atom Security, LLC"
+      },
+      "AtomSecurityDescription": {
+        "text": "Created features on python, covered code with unit tests, supported and improved existing code, integrated Asterisk."
+      },
+      "Novaris": {
+        "text": "Novaris"
+      },
+      "NovarisDescription": {
+        "text": "Developed an emergency response system on Java GWT."
+      },
+      "AcademMedia": {
+        "text": "Academ Media"
+      },
+      "AcademMediaDescription": {
+        "text": "Developed mobile application using javascript framework7 and jade."
+      },
+      "NSU": {
+        "text": "Novosibirsk State University (NSU)"
+      },
+      "NSUDescription": {
+        "text": "Successfully studied mathematics and computer science."
+      },
+      "AlgebraAndNumberTheory": {
+        "text": "Algebra and Number Theory"
+      },
+      "MathematicalLogicAndFoundationsMathematics": {
+        "text": "Mathematical logic and the foundations of mathematics"
+      },
+      "ProbabilityTheoryAndMathematicalStatistics": {
+        "text": "Probability theory and mathematical statistics"
+      },
+      "MathematicalAndFunctionalAnalysis": {
+        "text": "Mathematical and functional analysis"
+      },
+      "GeometryAndTopology": {
+        "text": "Geometry and topology"
+      },
+      "DifferentialEquationsAndMathematicalPhysics": {
+        "text": "Differential equations and mathematical physics"
+      },
+      "ComputabilityTheoryAndTheoryOfAlgorithms": {
+        "text": "Computability theory and the theory of algorithms"
+      },
+      "Programming": {
+        "text": "Programming"
+      },
+      "Interests": {
+        "text": "Interests"
+      },
+      "InterestsDescription": {
+        "text": "Love to learn more and more. Here are some projects of mine."
+      },
+      "Qworpa": {
+        "text": "Qworpa"
+      },
+      "QworpaDescription": {
+        "text": "Qworpa is a free blog site."
+      },
+      "BrosFiles": {
+        "text": "BrosFiles"
+      },
+      "BrosFilesDescription": {
+        "text": "BrosFiles is a file storage."
+      },
+      "Koldakov": {
+        "text": "Koldakov"
+      },
+      "KoldakovDescription": {
+        "text": "Koldakov is a my profile site."
+      }
+    }
+  },
+  "ru": {
+    "translation": {
+      "NavbarBrand": {
+        "text": "Колдаков"
+      },
+      "DownloadCV": {
+        "text": "Скачать резюме"
+      },
+      "Language": {
+        "text": "Язык"
+      },
+      "LanguageNameEN": {
+        "text": "Английский"
+      },
+      "LanguageNameRU": {
+        "text": "Русский"
+      },
+      "HomeProfileTitle": {
+        "text": "Иван Колдаков"
+      },
+      "HomeProfileDescription": {
+        "text": "Не тот, кто выплёвывает код и забывает о нём. Мне интересно всё флоу: разработка, тесты, деплой, поддержка. Предпочитаю чистую историю Гита, но без фанатизма."
+      },
+      "Skills": {
+        "text": "Навыки"
+      },
+      "HomeProfileSkills": {
+        "text": "Некоторые навыки"
+      },
+      "Experience": {
+        "text": "Опыт работы"
+      },
+      "Education": {
+        "text": "Образование"
+      },
+      "Python": {
+        "text": "Python"
+      },
+      "Django": {
+        "text": "Django"
+      },
+      "AWS": {
+        "text": "Amazon Web Services (AWS)"
+      },
+      "RabbitMQ": {
+        "text": "RabbitMQ"
+      },
+      "Git": {
+        "text": "Git"
+      },
+      "Opsgenie": {
+        "text": "Opsgenie"
+      },
+      "Elasticsearch": {
+        "text": "Elasticsearch"
+      },
+      "MongoDB": {
+        "text": "MongoDB"
+      },
+      "CICD": {
+        "text": "CI/CD"
+      },
+      "CleanCoding": {
+        "text": "Clean Coding"
+      },
+      "Docker": {
+        "text": "Docker"
+      },
+      "Interviewing": {
+        "text": "Interviewing"
+      },
+      "RedAcre": {
+        "text": "Red Acre, LTD"
+      },
+      "RedAcreDescription": {
+        "text": "В данный момент работаю над несколькими микросервисами. Главный проект - Payment Gateway, который мы с командой создали с нуля."
+      },
+      "AtomSecurity": {
+        "text": "ООО Атом безопасность"
+      },
+      "AtomSecurityDescription": {
+        "text": "Разрабатывал фичи на Python с Unit тестами, поддерживал и улучшал существующий код, интегрировал Asterisk."
+      },
+      "Novaris": {
+        "text": "Новарис"
+      },
+      "NovarisDescription": {
+        "text": "Разрабатывал ГЛОНАСС."
+      },
+      "AcademMedia": {
+        "text": "Академ медиа"
+      },
+      "AcademMediaDescription": {
+        "text": "Разрабатывал мобильные приложения используя javascript framework7 и jade."
+      },
+      "NSU": {
+        "text": "Новосибирский Государственный Университет (НГУ)"
+      },
+      "NSUDescription": {
+        "text": "Успешно изучил математику и компьютерные науки."
+      },
+      "AlgebraAndNumberTheory": {
+        "text": "Algebra and Number Theory"
+      },
+      "MathematicalLogicAndFoundationsMathematics": {
+        "text": "Mathematical logic and the foundations of mathematics"
+      },
+      "ProbabilityTheoryAndMathematicalStatistics": {
+        "text": "Probability theory and mathematical statistics"
+      },
+      "MathematicalAndFunctionalAnalysis": {
+        "text": "Mathematical and functional analysis"
+      },
+      "GeometryAndTopology": {
+        "text": "Geometry and topology"
+      },
+      "DifferentialEquationsAndMathematicalPhysics": {
+        "text": "Differential equations and mathematical physics"
+      },
+      "ComputabilityTheoryAndTheoryOfAlgorithms": {
+        "text": "Computability theory and the theory of algorithms"
+      },
+      "Programming": {
+        "text": "Programming"
+      },
+      "Interests": {
+        "text": "Интересы"
+      }
+    }
+  }
+}
+
