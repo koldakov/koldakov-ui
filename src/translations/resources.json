@@ -147,6 +147,18 @@
       },
       "KoldakovDescription": {
         "text": "Koldakov is a my profile site."
+      },
+      "PageNotFound": {
+        "text": "Page not found"
+      },
+      "PageNotFoundDescription": {
+        "text": "The page you’re looking for doesn’t exist."
+      },
+      "Oops": {
+        "text": "Oops!"
+      },
+      "GoHome": {
+        "text": "Go Home"
       }
     }
   },
@@ -277,6 +289,18 @@
       },
       "Interests": {
         "text": "Интересы"
+      },
+      "PageNotFound": {
+        "text": "Страница не найдена"
+      },
+      "PageNotFoundDescription": {
+        "text": "Страница, на которой вы сейчас находитесь, не существует."
+      },
+      "Oops": {
+        "text": "Упс!"
+      },
+      "GoHome": {
+        "text": "Домой"
       }
     }
   }
