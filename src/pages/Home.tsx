@@ -235,12 +235,13 @@ export const Home = () => {
                     {experience.urls ? (
                       experience.urls.map(
                         (url, j) =>
-                          <div>
+                          <div
+                            key={j}
+                          >
                             <Link
                               className="link-primary"
                               to={url.link}
                               target="_blank"
-                              key={j}
                             >
                               {url.name}
                             </Link>
@@ -284,12 +285,13 @@ export const Home = () => {
                     {education.urls ? (
                       education.urls.map(
                         (url, j) =>
-                          <div>
+                          <div
+                            key={j}
+                          >
                             <Link
                               className="link-primary d-block"
                               to={url.link}
                               target="_blank"
-                              key={j}
                             >
                               {url.name}
                             </Link>
