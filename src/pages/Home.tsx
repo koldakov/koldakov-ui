@@ -207,9 +207,9 @@ export const Home = () => {
                 {t("Skills.text")}
               </Card.Title>
               <div style={{ maxWidth: 600 }}>
-              <Card.Text>
-                {skills.map((skill, i) => <Badge bg="success" key={i} pill>{skill.name}</Badge>)}
-              </Card.Text>
+                <Card.Text>
+                  {skills.map((skill, i) => <Badge bg="success" key={i} pill>{skill.name}</Badge>)}
+                </Card.Text>
               </div>
               <Card.Title>
                 {t("Experience.text")}
@@ -226,9 +226,9 @@ export const Home = () => {
                     </Card.Title>
                     <em
                       className="text-muted"
-                      >
-                        {experience.dateFrom} - {experience.dateTo}
-                      </em>
+                    >
+                      {experience.dateFrom} - {experience.dateTo}
+                    </em>
                     <Card.Text>
                       {experience.description}
                     </Card.Text>
@@ -275,7 +275,7 @@ export const Home = () => {
                     {education.mainCourses.map(
                       (course, i) =>
                         <li
-                        key={i}
+                          key={i}
                         >
                           {course.name}
                         </li>
@@ -322,7 +322,7 @@ export const Home = () => {
                     {interest.urls.map(
                       (url, i) =>
                         <li
-                        key={i}
+                          key={i}
                         >
                           <div>
                             <Link
