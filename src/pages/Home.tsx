@@ -211,6 +211,7 @@ export const Home = () => {
                   {skills.map((skill, i) => <Badge bg="success" key={i} pill>{skill.name}</Badge>)}
                 </Card.Text>
               </div>
+              <hr />
               <Card.Title>
                 {t("Experience.text")}
               </Card.Title>
@@ -249,9 +250,9 @@ export const Home = () => {
                         )
                       ) : (<></>)
                     }
-                    <hr />
                   </div>
                 )}
+              <hr />
               <Card.Title>
                 {t("Education.text")}
               </Card.Title>
@@ -302,6 +303,7 @@ export const Home = () => {
                     }
                   </div>
                 )}
+              <hr />
               <Card.Title>
                 {t("Interests.text")}
               </Card.Title>
