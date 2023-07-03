@@ -235,14 +235,16 @@ export const Home = () => {
                     {experience.urls ? (
                       experience.urls.map(
                         (url, i) =>
-                          <Link
-                            className="nav-link"
-                            to={url.link}
-                            target="_blank"
-                            key={i}
-                          >
-                            {url.name}
-                          </Link>
+                          <div>
+                            <Link
+                              className="link-primary"
+                              to={url.link}
+                              target="_blank"
+                              key={i}
+                            >
+                              {url.name}
+                            </Link>
+                          </div>
                         )
                       ) : (<></>)
                     }
@@ -282,14 +284,16 @@ export const Home = () => {
                     {education.urls ? (
                       education.urls.map(
                         (url, i) =>
-                          <Link
-                            className="nav-link"
-                            to={url.link}
-                            target="_blank"
-                            key={i}
-                          >
-                            {url.name}
-                          </Link>
+                          <div>
+                            <Link
+                              className="link-primary d-block"
+                              to={url.link}
+                              target="_blank"
+                              key={i}
+                            >
+                              {url.name}
+                            </Link>
+                          </div>
                         )
                       ) : (<></>)
                     }
@@ -320,13 +324,15 @@ export const Home = () => {
                         <li
                         key={i}
                         >
-                          <Link
-                            className="nav-link"
-                            to={url.link}
-                            target="_blank"
-                          >
-                            {url.name}
-                          </Link>
+                          <div>
+                            <Link
+                              className="link-primary"
+                              to={url.link}
+                              target="_blank"
+                            >
+                              {url.name}
+                            </Link>
+                          </div>
                         </li>
                     )}
                     </ul>
