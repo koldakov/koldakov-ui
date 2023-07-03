@@ -159,6 +159,12 @@
       },
       "GoHome": {
         "text": "Go Home"
+      },
+      "CookieContent": {
+        "text": "This website uses cookies to enhance the user experience."
+      },
+      "CookieButton": {
+        "text": "Got it"
       }
     }
   },
@@ -301,6 +307,12 @@
       },
       "GoHome": {
         "text": "Домой"
+      },
+      "CookieContent": {
+        "text": "Сайт использует Cookies, чтобы улучшить пользовательский опыт."
+      },
+      "CookieButton": {
+        "text": "Понимаю"
       }
     }
   }
