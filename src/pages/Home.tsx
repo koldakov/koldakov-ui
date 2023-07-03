@@ -234,13 +234,13 @@ export const Home = () => {
                     </Card.Text>
                     {experience.urls ? (
                       experience.urls.map(
-                        (url, i) =>
+                        (url, j) =>
                           <div>
                             <Link
                               className="link-primary"
                               to={url.link}
                               target="_blank"
-                              key={i}
+                              key={j}
                             >
                               {url.name}
                             </Link>
@@ -273,9 +273,9 @@ export const Home = () => {
                     </Card.Text>
                     <ul>
                     {education.mainCourses.map(
-                      (course, i) =>
+                      (course, j) =>
                         <li
-                          key={i}
+                          key={j}
                         >
                           {course.name}
                         </li>
@@ -283,13 +283,13 @@ export const Home = () => {
                     </ul>
                     {education.urls ? (
                       education.urls.map(
-                        (url, i) =>
+                        (url, j) =>
                           <div>
                             <Link
                               className="link-primary d-block"
                               to={url.link}
                               target="_blank"
-                              key={i}
+                              key={j}
                             >
                               {url.name}
                             </Link>
@@ -320,9 +320,9 @@ export const Home = () => {
                     </Card.Text>
                     <ul>
                     {interest.urls.map(
-                      (url, i) =>
+                      (url, j) =>
                         <li
-                          key={i}
+                          key={j}
                         >
                           <div>
                             <Link
