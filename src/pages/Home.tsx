@@ -253,6 +253,7 @@ export const Home = () => {
                   </div>
                 )}
               <Card.Title>
+                {t("Education.text")}
               </Card.Title>
               {educations.map(
                 (education, i) =>
