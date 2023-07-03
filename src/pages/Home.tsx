@@ -1,6 +1,7 @@
-import { Badge, Button, ButtonGroup, Card, Col, Nav, Row } from "react-bootstrap";
+import { Badge, Button, ButtonGroup, Card, Col, Row } from "react-bootstrap";
 import { saveAs } from "file-saver";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import profileImage from "../assets/images/profile.jpg";
 import cv from "../assets/docs/Koldakov_Ivan_CV.pdf";
@@ -234,13 +235,14 @@ export const Home = () => {
                     {experience.urls ? (
                       experience.urls.map(
                         (url, i) =>
-                          <Nav.Link
-                            href={url.link}
+                          <Link
+                            className="nav-link"
+                            to={url.link}
                             target="_blank"
                             key={i}
                           >
                             {url.name}
-                          </Nav.Link>
+                          </Link>
                         )
                       ) : (<></>)
                     }
@@ -280,13 +282,14 @@ export const Home = () => {
                     {education.urls ? (
                       education.urls.map(
                         (url, i) =>
-                          <Nav.Link
-                            href={url.link}
+                          <Link
+                            className="nav-link"
+                            to={url.link}
                             target="_blank"
                             key={i}
                           >
                             {url.name}
-                          </Nav.Link>
+                          </Link>
                         )
                       ) : (<></>)
                     }
@@ -317,12 +320,13 @@ export const Home = () => {
                         <li
                         key={i}
                         >
-                          <Nav.Link
-                            href={url.link}
+                          <Link
+                            className="nav-link"
+                            to={url.link}
                             target="_blank"
                           >
                             {url.name}
-                          </Nav.Link>
+                          </Link>
                         </li>
                     )}
                     </ul>
