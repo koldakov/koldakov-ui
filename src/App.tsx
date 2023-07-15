@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import CookieConsent from "react-cookie-consent";
 
 import { Home, NotFound } from './pages';
-import { NavbarHeader } from './components';
+import { NavbarHeader, Footer } from './components';
 import './App.css';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
           <Route path="*" element={ <NotFound /> }/>
         </Routes>
       </Container>
+      <Footer />
       <CookieConsent
         location="bottom"
         buttonText={t("CookieButton.text")}
