@@ -9,6 +9,7 @@ export const NavbarHeader = () => {
   return(
     <Navbar
       sticky="top"
+      className="bg-body-tertiary"
     >
       <Container>
         <Navbar.Brand
