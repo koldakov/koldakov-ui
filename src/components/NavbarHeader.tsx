@@ -7,7 +7,9 @@ export const NavbarHeader = () => {
   const { t, i18n } = useTranslation();
 
   return(
-    <Navbar>
+    <Navbar
+      sticky="top"
+    >
       <Container>
         <Navbar.Brand
           href="/"
