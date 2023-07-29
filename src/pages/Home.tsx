@@ -17,39 +17,51 @@ export const Home = () => {
   const skills = [
     {
       name: t("Python.text"),
+      link: "https://www.python.org/",
     },
     {
       name: t("Django.text"),
+      link: "https://www.djangoproject.com/",
     },
     {
       name: t("AWS.text"),
+      link: "https://aws.amazon.com",
     },
     {
       name: t("RabbitMQ.text"),
+      link: "https://www.rabbitmq.com/",
     },
     {
       name: t("Git.text"),
+      link: "https://git-scm.com/",
     },
     {
       name: t("Opsgenie.text"),
+      link: "https://www.atlassian.com/software/opsgenie",
     },
     {
       name: t("Elasticsearch.text"),
+      link: "https://www.elastic.co",
     },
     {
       name: t("MongoDB.text"),
+      link: "https://www.mongodb.com",
     },
     {
       name: t("CICD.text"),
+      link: "https://en.wikipedia.org/wiki/CI/CD",
     },
     {
       name: t("CleanCoding.text"),
+      link: "https://qworpa.com",
     },
     {
       name: t("Docker.text"),
+      link: "https://www.docker.com",
     },
     {
       name: t("Interviewing.text"),
+      link: "https://www.teamtailor.com",
     }
   ];
 
@@ -208,7 +220,13 @@ export const Home = () => {
               </Card.Title>
               <div style={{ maxWidth: 600 }}>
                 <Card.Text>
-                  {skills.map((skill, i) => <Badge bg="success" key={i} pill>{skill.name}</Badge>)}
+                  {
+                    skills.map(
+                      (skill, i) => <a href={ skill.link } target="_blank">
+                        <Badge bg="success" key={i} pill>{skill.name}</Badge>
+                      </a>
+                    )
+                  }
                 </Card.Text>
               </div>
               <hr />
