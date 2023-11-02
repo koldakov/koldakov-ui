@@ -1,3 +1,5 @@
+import "./Footer.css";
+
 export const Footer = () => {
   return (
     <footer id="sticky-footer" className="py-2 bg-dark text-white-50">
