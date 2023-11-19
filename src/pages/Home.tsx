@@ -14,6 +14,7 @@ export const Home = () => {
   const { t } = useTranslation();
   const [showChuckNorrisFact, setShowChuckNorrisFact] = useState(false);
   const [chuckNorrisFact, setChuckNorrisFact] = useState("...");
+  const [getNewDisabled, setGetNewDisabled] = useState(true);
 
   const saveCV = () => {
     saveAs(cv, "Koldakov_Ivan_CV.pdf");
@@ -187,13 +188,17 @@ export const Home = () => {
   ];
 
   const getChuckNorrisFact = () => {
+    setGetNewDisabled(true);
     fetch("https://api.chucknorris.io/jokes/random")
       .then(response => response.json())
-      .then(json => setChuckNorrisFact(json["value"]))
+      .then(json => {
+        setChuckNorrisFact(json["value"]);
+      })
       .catch(error => {
         console.error(error);
-        setChuckNorrisFact(t("UnknownHTTPError.text"))
-      });
+        setChuckNorrisFact(t("UnknownHTTPError.text"));
+      })
+      .finally(() => setGetNewDisabled(false));
   }
 
   const handleCloseChuckNorrisFact = () => {
@@ -401,6 +406,9 @@ export const Home = () => {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseChuckNorrisFact}>
             {t("Close.text")}
+          </Button>
+          <Button variant="success" onClick={getChuckNorrisFact} disabled={getNewDisabled}>
+            {t("GetNew.text")}
           </Button>
         </Modal.Footer>
       </Modal>
