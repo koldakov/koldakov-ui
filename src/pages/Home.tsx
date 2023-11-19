@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Badge, Button, ButtonGroup, Card, Col, Row } from "react-bootstrap";
+import Modal from 'react-bootstrap/Modal';
 import { saveAs } from "file-saver";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -10,6 +12,8 @@ import "./Home.css";
 
 export const Home = () => {
   const { t } = useTranslation();
+  const [showChuckNorrisFact, setShowChuckNorrisFact] = useState(false);
+  const [chuckNorrisFact, setChuckNorrisFact] = useState("...");
 
   const saveCV = () => {
     saveAs(cv, "Koldakov_Ivan_CV.pdf");
@@ -182,6 +186,26 @@ export const Home = () => {
     }
   ];
 
+  const getChuckNorrisFact = () => {
+    fetch("https://api.chucknorris.io/jokes/random")
+      .then(response => response.json())
+      .then(json => setChuckNorrisFact(json["value"]))
+      .catch(error => {
+        console.error(error);
+        setChuckNorrisFact(t("UnknownHTTPError.text"))
+      });
+  }
+
+  const handleCloseChuckNorrisFact = () => {
+    setShowChuckNorrisFact(false);
+    setChuckNorrisFact("...");
+  }
+
+  const handleShowChuckNorrisFact = () => {
+    getChuckNorrisFact();
+    setShowChuckNorrisFact(true);
+  }
+
   return(
     <>
       <Row>
@@ -201,6 +225,13 @@ export const Home = () => {
                 onClick={saveCV}
               >
                 {t("DownloadCV.text")}
+              </Button>
+              <Button
+                className="mt-2"
+                variant="success"
+                onClick={handleShowChuckNorrisFact}
+              >
+                {t("GetChuckNorrisFact.text")}
               </Button>
             </ButtonGroup>
           </Card>
@@ -365,6 +396,14 @@ export const Home = () => {
           </Card>
         </Col>
       </Row>
+      <Modal show={showChuckNorrisFact} onHide={handleCloseChuckNorrisFact}>
+        <Modal.Body>{chuckNorrisFact}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseChuckNorrisFact}>
+            {t("Close.text")}
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

@@ -165,6 +165,15 @@
       },
       "CookieButton": {
         "text": "Got it"
+      },
+      "GetChuckNorrisFact": {
+        "text": "Get Chuck Norris fact"
+      },
+      "Close": {
+        "text": "Close"
+      },
+      "UnknownHTTPError": {
+        "text": "Something went wrong. Try again later."
       }
     }
   },
@@ -313,6 +322,15 @@
       },
       "CookieButton": {
         "text": "Понимаю"
+      },
+      "GetChuckNorrisFact": {
+        "text": "Быстрый факт о Чаке Норрисе"
+      },
+      "Close": {
+        "text": "Закрыть"
+      },
+      "UnknownHTTPError": {
+        "text": "Что-то пошло не так, попробуйте повторить запрос."
       }
     }
   }
