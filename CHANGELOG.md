@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+[0.7.0]: https://github.com/AivGitHub/koldakov/releases/tag/v0.7.0
+[0.6.0]: https://github.com/AivGitHub/koldakov/releases/tag/v0.6.0
 [0.5.0]: https://github.com/AivGitHub/koldakov/releases/tag/v0.5.0
 [0.4.0]: https://github.com/AivGitHub/koldakov/releases/tag/v0.4.0
 [0.3.0]: https://github.com/AivGitHub/koldakov/releases/tag/v0.3.0
@@ -15,6 +17,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 [0.0.3]: https://github.com/AivGitHub/koldakov/releases/tag/v0.0.3
 [0.0.2]: https://github.com/AivGitHub/koldakov/releases/tag/v0.0.2
 [0.0.1]: https://github.com/AivGitHub/koldakov/releases/tag/v0.0.1
+
+## [0.7.0] - 2023-11-20
+
+### Added
+
+- Button to refresh Chuck Norris Facts.
+
+## [0.6.0] - 2023-11-19
+
+### Added
+
+- Button to retrieve Chuck Norris Facts.
 
 ## [0.5.0] - 2023-07-29
 
