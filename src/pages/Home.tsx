@@ -156,6 +156,16 @@ export const Home = () => {
 
   const interests = [
     {
+      name: t("Futuramaapi.text"),
+      description: t("FuturamaapiDescription.text"),
+      urls: [
+        {
+          link: "https://futuramaapi.com",
+          name: "futuramaapi.com",
+        },
+      ],
+    },
+    {
       name: t("Qworpa.text"),
       description: t("QworpaDescription.text"),
       urls: [

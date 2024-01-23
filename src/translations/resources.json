@@ -177,6 +177,12 @@
       },
       "GetNew": {
         "text": "Get New"
+      },
+      "Futuramaapi": {
+        "text": "Futurama API"
+      },
+      "FuturamaapiDescription": {
+        "text": "REST API and GraphQL API dedicated to celebrating the iconic TV show Futurama."
       }
     }
   },
@@ -337,6 +343,12 @@
       },
       "GetNew": {
         "text": "Ещё факт"
+      },
+      "Futuramaapi": {
+        "text": "Futurama API"
+      },
+      "FuturamaapiDescription": {
+        "text": "REST API и GraphQL API, сайт посвящен культовому телешоу Футурама."
       }
     }
   }
