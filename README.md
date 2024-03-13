@@ -4,7 +4,7 @@ Personal profile website.
 
 ## Installation
 
-1. `git clone https://github.com/AivGitHub/koldakov`.
+1. `git clone https://github.com/koldakov/koldakov`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -59,7 +59,7 @@ There are my contacts:
 - [Linkedin](https://www.linkedin.com/in/aiv/)
 - [Send an Email](mailto:ivan@koldakov.com?subject=[GitHub]-koldakov)
 
-Project Link: https://github.com/AivGitHub/koldakov
+Project Link: https://github.com/koldakov/koldakov
 
 Best regards,
 
