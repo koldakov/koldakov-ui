@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-[0.8.1]: https://github.com/koldakov/koldakov/releases/tag/v0.8.2
+[0.8.3]: https://github.com/koldakov/koldakov/releases/tag/v0.8.3
+[0.8.2]: https://github.com/koldakov/koldakov/releases/tag/v0.8.2
 [0.8.1]: https://github.com/koldakov/koldakov/releases/tag/v0.8.1
 [0.8.0]: https://github.com/koldakov/koldakov/releases/tag/v0.8.0
 [0.7.1]: https://github.com/koldakov/koldakov/releases/tag/v0.7.1
@@ -21,6 +22,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 [0.0.3]: https://github.com/koldakov/koldakov/releases/tag/v0.0.3
 [0.0.2]: https://github.com/koldakov/koldakov/releases/tag/v0.0.2
 [0.0.1]: https://github.com/koldakov/koldakov/releases/tag/v0.0.1
+
+## [0.8.3] - 2024-03-13
+
+### Updated
+
+- CV with corresponding project URLs.
 
 ## [0.8.2] - 2024-03-13
 
