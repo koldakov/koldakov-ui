@@ -32,7 +32,7 @@ export const NavbarHeader = () => {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link
-              href="https://instagram.com/its_baiter"
+              href="https://instagram.com/ikoldakov"
               target="_blank"
             >
               <AiFillInstagram
