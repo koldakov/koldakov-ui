@@ -85,7 +85,7 @@ export const Home = () => {
         },
       ],
       dateFrom: "Apr 2022",
-      dateTo: "Present",
+      dateTo: "Jun 2024",
     },
     {
       name: t("AtomSecurity.text"),
