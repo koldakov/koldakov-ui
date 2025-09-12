@@ -306,9 +306,6 @@ export const Home = () => {
                     >
                       {experience.dateFrom} - {experience.dateTo}
                     </em>
-                    <Card.Text>
-                      {experience.description}
-                    </Card.Text>
                     {experience.urls ? (
                       experience.urls.map(
                         (url, j) =>
@@ -326,6 +323,9 @@ export const Home = () => {
                         )
                       ) : (<></>)
                     }
+                    <Card.Text>
+                      {experience.description}
+                    </Card.Text>
                   </div>
                 )}
               <hr />
