@@ -280,8 +280,8 @@ export const Home = () => {
                 <Card.Text>
                   {
                     skills.map(
-                      (skill, i) => <a href={ skill.link } target="_blank">
-                        <Badge bg="success" key={i} pill>{skill.name}</Badge>
+                      (skill, i) => <a href={ skill.link } key={i} target="_blank">
+                        <Badge bg="success" pill>{skill.name}</Badge>
                       </a>
                     )
                   }
