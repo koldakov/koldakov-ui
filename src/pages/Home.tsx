@@ -323,7 +323,7 @@ export const Home = () => {
                         )
                       ) : (<></>)
                     }
-                    <Card.Text>
+                    <Card.Text className="mb-3 pt-3">
                       {experience.description}
                     </Card.Text>
                   </div>
