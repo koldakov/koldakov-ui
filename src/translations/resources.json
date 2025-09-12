@@ -74,7 +74,7 @@
         "text": "Red Acre, LTD"
       },
       "RedAcreDescription": {
-        "text": "Currently working on multiple microservices. Main project is a Payment Gateway, which we built from scratch with a team."
+        "text": "Worked on multiple microservices. Main project is a Payment Gateway, which we built from scratch with a team."
       },
       "AtomSecurity": {
         "text": "Atom Security, LLC"
@@ -183,6 +183,12 @@
       },
       "FuturamaapiDescription": {
         "text": "REST API and GraphQL API dedicated to celebrating the iconic TV show Futurama."
+      },
+      "ServersCom": {
+        "text": "Servers.com Inc"
+      },
+      "ServersComDescription": {
+        "text": "Successfully developed network analytics applications using FastAPI in a team of 2, designing the project with layered architecture, adapters, and dependency injection. Applied clean coding principles and SOLID in development, built the database layer with SQLAlchemy, and utilized Redis for caching. Used SAQ for processing background tasks such as scanning and analytics, wrote unit tests with pytest, and containerized applications with Docker."
       }
     }
   },
@@ -261,7 +267,7 @@
         "text": "Red Acre, LTD"
       },
       "RedAcreDescription": {
-        "text": "В данный момент работаю над несколькими микросервисами. Главный проект - Payment Gateway, который мы с командой создали с нуля."
+        "text": "Работал над несколькими микросервисами. Главный проект - Payment Gateway, который мы с командой создали с нуля."
       },
       "AtomSecurity": {
         "text": "ООО Атом безопасность"
@@ -349,6 +355,12 @@
       },
       "FuturamaapiDescription": {
         "text": "REST API и GraphQL API, сайт посвящен культовому телешоу Футурама."
+      },
+      "ServersCom": {
+        "text": "Servers.com Inc"
+      },
+      "ServersComDescription": {
+        "text": "Успешно разработал сетевые аналитические приложения на FastAPI в команде из 2 человек, спроектировав проект с использованием слоистой архитектуры, адаптеров и внедрения зависимостей. Применял принципы чистого кода и SOLID, построил слой работы с базой данных на SQLAlchemy и использовал Redis для кэширования. Использовал SAQ для обработки фоновых задач, таких как сканирование и аналитика, писал юнит-тесты с pytest и контейнеризировал приложения с помощью Docker."
       }
     }
   }

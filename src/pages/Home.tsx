@@ -72,6 +72,18 @@ export const Home = () => {
 
   const experiences = [
     {
+      name: t("ServersCom.text"),
+      description: t("ServersComDescription.text"),
+      urls: [
+        {
+          link: "https://www.servers.com",
+          name: "servers.com",
+        },
+      ],
+      dateFrom: "Jan 2025",
+      dateTo: "Present",
+    },
+    {
       name: t("RedAcre.text"),
       description: t("RedAcreDescription.text"),
       urls: [
