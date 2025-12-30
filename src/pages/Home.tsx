@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { Badge, Button, ButtonGroup, Card, Col, Row } from "react-bootstrap";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 import { saveAs } from "file-saver";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -67,7 +67,7 @@ export const Home = () => {
     {
       name: t("Interviewing.text"),
       link: "https://www.teamtailor.com",
-    }
+    },
   ];
 
   const experiences = [
@@ -122,7 +122,7 @@ export const Home = () => {
       description: t("AcademMediaDescription.text"),
       dateFrom: "Jul 2015",
       dateTo: "Aug 2015",
-    }
+    },
   ];
 
   const educations = [
@@ -163,7 +163,7 @@ export const Home = () => {
           name: t("Programming.text"),
         },
       ],
-    }
+    },
   ];
 
   const interests = [
@@ -206,46 +206,40 @@ export const Home = () => {
           name: "koldakov.com",
         },
       ],
-    }
+    },
   ];
 
   const getChuckNorrisFact = () => {
     setGetNewDisabled(true);
     fetch("https://api.chucknorris.io/jokes/random")
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         setChuckNorrisFact(json["value"]);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         setChuckNorrisFact(t("UnknownHTTPError.text"));
       })
       .finally(() => setGetNewDisabled(false));
-  }
+  };
 
   const handleCloseChuckNorrisFact = () => {
     setShowChuckNorrisFact(false);
     setChuckNorrisFact("...");
-  }
+  };
 
   const handleShowChuckNorrisFact = () => {
     getChuckNorrisFact();
     setShowChuckNorrisFact(true);
-  }
+  };
 
-  return(
+  return (
     <>
       <Row>
         <Col sm={3}>
           <Card>
-            <Card.Img
-              variant="top"
-              src={profileImage}
-            />
-            <ButtonGroup
-              className="d-flex"
-              vertical
-            >
+            <Card.Img variant="top" src={profileImage} />
+            <ButtonGroup className="d-flex" vertical>
               <Button
                 className="btn-block mt-3"
                 variant="danger"
@@ -266,159 +260,110 @@ export const Home = () => {
         <Col sm={9}>
           <Card>
             <Card.Body>
-              <Card.Title>
-                {t("HomeProfileTitle.text")}
-              </Card.Title>
-              <Card.Text>
-                {t("HomeProfileDescription.text")}
-              </Card.Text>
+              <Card.Title>{t("HomeProfileTitle.text")}</Card.Title>
+              <Card.Text>{t("HomeProfileDescription.text")}</Card.Text>
               <hr />
-              <Card.Title>
-                {t("Skills.text")}
-              </Card.Title>
+              <Card.Title>{t("Skills.text")}</Card.Title>
               <div style={{ maxWidth: 600 }}>
                 <Card.Text>
-                  {
-                    skills.map(
-                      (skill, i) => <a href={ skill.link } key={i} target="_blank">
-                        <Badge bg="success" pill>{skill.name}</Badge>
-                      </a>
-                    )
-                  }
+                  {skills.map((skill, i) => (
+                    <a href={skill.link} key={i} target="_blank">
+                      <Badge bg="success" pill>
+                        {skill.name}
+                      </Badge>
+                    </a>
+                  ))}
                 </Card.Text>
               </div>
               <hr />
-              <Card.Title>
-                {t("Experience.text")}
-              </Card.Title>
-              {experiences.map(
-                (experience, i) =>
-                  <div
-                    key={i}
-                  >
-                    <Card.Title
-                      className="text-muted"
-                    >
-                      {experience.name}
-                    </Card.Title>
-                    <em
-                      className="text-muted"
-                    >
-                      {experience.dateFrom} - {experience.dateTo}
-                    </em>
-                    {experience.urls ? (
-                      experience.urls.map(
-                        (url, j) =>
-                          <div
-                            key={j}
-                          >
-                            <Link
-                              className="link-primary"
-                              to={url.link}
-                              target="_blank"
-                            >
-                              {url.name}
-                            </Link>
-                          </div>
-                        )
-                      ) : (<></>)
-                    }
-                    <Card.Text className="mb-3 pt-3">
-                      {experience.description}
-                    </Card.Text>
-                  </div>
-                )}
-              <hr />
-              <Card.Title>
-                {t("Education.text")}
-              </Card.Title>
-              {educations.map(
-                (education, i) =>
-                  <div
-                    key={i}
-                  >
-                    <Card.Title
-                      className="text-muted"
-                    >
-                      {education.name}
-                    </Card.Title>
-                    <em
-                      className="text-muted"
-                    >
-                      {education.dateFrom} - {education.dateTo}
-                    </em>
-                    <Card.Text>
-                      {education.description}
-                    </Card.Text>
-                    <ul>
-                    {education.mainCourses.map(
-                      (course, j) =>
-                        <li
-                          key={j}
+              <Card.Title>{t("Experience.text")}</Card.Title>
+              {experiences.map((experience, i) => (
+                <div key={i}>
+                  <Card.Title className="text-muted">
+                    {experience.name}
+                  </Card.Title>
+                  <em className="text-muted">
+                    {experience.dateFrom} - {experience.dateTo}
+                  </em>
+                  {experience.urls ? (
+                    experience.urls.map((url, j) => (
+                      <div key={j}>
+                        <Link
+                          className="link-primary"
+                          to={url.link}
+                          target="_blank"
                         >
-                          {course.name}
-                        </li>
-                    )}
-                    </ul>
-                    {education.urls ? (
-                      education.urls.map(
-                        (url, j) =>
-                          <div
-                            key={j}
-                          >
-                            <Link
-                              className="link-primary d-block"
-                              to={url.link}
-                              target="_blank"
-                            >
-                              {url.name}
-                            </Link>
-                          </div>
-                        )
-                      ) : (<></>)
-                    }
-                  </div>
-                )}
+                          {url.name}
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                  <Card.Text className="mb-3 pt-3">
+                    {experience.description}
+                  </Card.Text>
+                </div>
+              ))}
               <hr />
-              <Card.Title>
-                {t("Interests.text")}
-              </Card.Title>
-              <Card.Text>
-                {t("InterestsDescription.text")}
-              </Card.Text>
-              {interests.map(
-                (interest, i) =>
-                  <div
-                    key={i}
-                  >
-                    <Card.Title
-                      className="text-muted"
-                    >
-                      {interest.name}
-                    </Card.Title>
-                    <Card.Text>
-                      {interest.description}
-                    </Card.Text>
-                    <ul>
-                    {interest.urls.map(
-                      (url, j) =>
-                        <li
-                          key={j}
+              <Card.Title>{t("Education.text")}</Card.Title>
+              {educations.map((education, i) => (
+                <div key={i}>
+                  <Card.Title className="text-muted">
+                    {education.name}
+                  </Card.Title>
+                  <em className="text-muted">
+                    {education.dateFrom} - {education.dateTo}
+                  </em>
+                  <Card.Text>{education.description}</Card.Text>
+                  <ul>
+                    {education.mainCourses.map((course, j) => (
+                      <li key={j}>{course.name}</li>
+                    ))}
+                  </ul>
+                  {education.urls ? (
+                    education.urls.map((url, j) => (
+                      <div key={j}>
+                        <Link
+                          className="link-primary d-block"
+                          to={url.link}
+                          target="_blank"
                         >
-                          <div>
-                            <Link
-                              className="link-primary"
-                              to={url.link}
-                              target="_blank"
-                            >
-                              {url.name}
-                            </Link>
-                          </div>
-                        </li>
-                    )}
-                    </ul>
-                  </div>
-                )}
+                          {url.name}
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
+              <hr />
+              <Card.Title>{t("Interests.text")}</Card.Title>
+              <Card.Text>{t("InterestsDescription.text")}</Card.Text>
+              {interests.map((interest, i) => (
+                <div key={i}>
+                  <Card.Title className="text-muted">
+                    {interest.name}
+                  </Card.Title>
+                  <Card.Text>{interest.description}</Card.Text>
+                  <ul>
+                    {interest.urls.map((url, j) => (
+                      <li key={j}>
+                        <div>
+                          <Link
+                            className="link-primary"
+                            to={url.link}
+                            target="_blank"
+                          >
+                            {url.name}
+                          </Link>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </Card.Body>
           </Card>
         </Col>
@@ -429,11 +374,15 @@ export const Home = () => {
           <Button variant="secondary" onClick={handleCloseChuckNorrisFact}>
             {t("Close.text")}
           </Button>
-          <Button variant="success" onClick={getChuckNorrisFact} disabled={getNewDisabled}>
+          <Button
+            variant="success"
+            onClick={getChuckNorrisFact}
+            disabled={getNewDisabled}
+          >
             {t("GetNew.text")}
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
