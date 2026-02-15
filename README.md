@@ -1,66 +1,73 @@
-# About The Project
+# React + TypeScript + Vite
 
-Personal profile website.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Installation
+Currently, two official plugins are available:
 
-1. `git clone https://github.com/koldakov/koldakov`.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## React Compiler
 
-## Development
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-1. `npm run dev`.
+## Expanding the ESLint configuration
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Contributing
+```js
+export default defineConfig([
+  globalIgnores(["dist"]),
+  {
+    files: ["**/*.{ts,tsx}"],
+    extends: [
+      // Other configs...
 
-1. Fork the Project
-2. Open a Pull Request
-3. Or just read here: [contributing](https://docs.github.com/en/get-started/quickstart/contributing-to-projects)
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+]);
+```
 
-## Methodology
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-1. Do a lot, break a lot.
-2. There are no difficult tasks, only interesting.
-3. Mostly TBD.
+```js
+// eslint.config.js
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Important
-
-1. Quality.
-2. Security.
-3. Google first.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## License
-
-Distributed under the Apache 2.0 License. See [LICENSE.md](LICENSE.md) for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Buy me a coffee if you want to support me
-
-https://www.buymeacoffee.com/aivCoffee
-
-## Contact
-
-Hi all,
-
-How are you? Hope You've enjoyed the project.
-
-There are my contacts:
-
-- [Linkedin](https://www.linkedin.com/in/aiv/)
-- [Send an Email](mailto:ivan@koldakov.com?subject=[GitHub]-koldakov)
-
-Project Link: https://github.com/koldakov/koldakov
-
-Best regards,
-
-[Ivan Koldakov](https://www.linkedin.com/in/aiv/)
+export default defineConfig([
+  globalIgnores(["dist"]),
+  {
+    files: ["**/*.{ts,tsx}"],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs["recommended-typescript"],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+]);
+```
