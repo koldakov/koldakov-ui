@@ -1,4 +1,194 @@
-.card,
-.card-body {
-  border: 0;
+.profile {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  padding: 2rem 0 3rem;
+}
+
+.profile-sidebar {
+  flex: 0 0 220px;
+  position: sticky;
+  top: 70px;
+}
+
+.profile-photo-wrap {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.profile-photo {
+  width: 100%;
+  display: block;
+}
+
+.cv-button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.15s;
+}
+
+.cv-button:hover {
+  background: #1d3452;
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.section {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section--hero {
+  padding-top: 0;
+}
+
+.section--last {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.9rem;
+}
+
+.section-intro {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.profile-name {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: normal;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+}
+
+.profile-bio {
+  font-size: 0.93rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  background: #eef1f6;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  border: 1px solid #c9d4e4;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+
+.skill-tag:hover {
+  background: #dde5f0;
+  color: var(--color-accent);
+}
+
+.entry {
+  margin-bottom: 1.25rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-name {
+  font-family: var(--font-heading);
+  font-size: 0.97rem;
+  font-weight: bold;
+  color: var(--color-text);
+  margin: 0 0 0.15rem;
+}
+
+.entry-dates {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin-bottom: 0.2rem;
+}
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.entry-link {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.entry-link:hover {
+  text-decoration: underline;
+}
+
+.entry-desc {
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.course-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1rem 0 2rem;
+  }
+
+  .profile-sidebar {
+    flex: none;
+    width: 100%;
+    position: static;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .profile-photo-wrap {
+    flex: 0 0 120px;
+    margin-bottom: 0;
+  }
+
+  .cv-button {
+    flex: 1;
+    align-self: flex-start;
+  }
 }

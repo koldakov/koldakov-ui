@@ -1,388 +1,181 @@
-import { useState } from "react";
-import { Badge, Button, ButtonGroup, Card, Col, Row } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
 import { saveAs } from "file-saver";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import profileImage from "../assets/images/profile.jpg";
 import cv from "../assets/docs/Koldakov_Ivan_CV.pdf";
+import { useProfileData } from "../hooks/useProfileData";
+import { Skeleton } from "../components/Skeleton";
 
 import "./Home.css";
 
 export const Home = () => {
   const { t } = useTranslation();
-  const [showChuckNorrisFact, setShowChuckNorrisFact] = useState(false);
-  const [chuckNorrisFact, setChuckNorrisFact] = useState("...");
-  const [getNewDisabled, setGetNewDisabled] = useState(true);
+  const { data, isLoading } = useProfileData();
 
-  const saveCV = () => {
-    saveAs(cv, "Koldakov_Ivan_CV.pdf");
-  };
-  const skills = [
-    {
-      name: t("Python.text"),
-      link: "https://www.python.org/",
-    },
-    {
-      name: t("Django.text"),
-      link: "https://www.djangoproject.com/",
-    },
-    {
-      name: t("AWS.text"),
-      link: "https://aws.amazon.com",
-    },
-    {
-      name: t("RabbitMQ.text"),
-      link: "https://www.rabbitmq.com/",
-    },
-    {
-      name: t("Git.text"),
-      link: "https://git-scm.com/",
-    },
-    {
-      name: t("Opsgenie.text"),
-      link: "https://www.atlassian.com/software/opsgenie",
-    },
-    {
-      name: t("Elasticsearch.text"),
-      link: "https://www.elastic.co",
-    },
-    {
-      name: t("MongoDB.text"),
-      link: "https://www.mongodb.com",
-    },
-    {
-      name: t("CICD.text"),
-      link: "https://en.wikipedia.org/wiki/CI/CD",
-    },
-    {
-      name: t("CleanCoding.text"),
-      link: "https://qworpa.com",
-    },
-    {
-      name: t("Docker.text"),
-      link: "https://www.docker.com",
-    },
-    {
-      name: t("Interviewing.text"),
-      link: "https://www.teamtailor.com",
-    },
-  ];
-
-  const experiences = [
-    {
-      name: t("ServersCom.text"),
-      description: t("ServersComDescription.text"),
-      urls: [
-        {
-          link: "https://www.servers.com",
-          name: "servers.com",
-        },
-      ],
-      dateFrom: "Jan 2025",
-      dateTo: "Present",
-    },
-    {
-      name: t("RedAcre.text"),
-      description: t("RedAcreDescription.text"),
-      urls: [
-        {
-          link: "https://redacreltd.com",
-          name: "redacreltd.com",
-        },
-        {
-          link: "https://zeply.com",
-          name: "zeply.com",
-        },
-      ],
-      dateFrom: "Apr 2022",
-      dateTo: "Jun 2024",
-    },
-    {
-      name: t("AtomSecurity.text"),
-      description: t("AtomSecurityDescription.text"),
-      urls: [
-        {
-          link: "https://staffcop.com",
-          name: "staffcop.com",
-        },
-      ],
-      dateFrom: "Apr 2017",
-      dateTo: "Jan 2022",
-    },
-    {
-      name: t("Novaris.text"),
-      description: t("NovarisDescription.text"),
-      dateFrom: "Oct 2016",
-      dateTo: "Apr 2017",
-    },
-    {
-      name: t("AcademMedia.text"),
-      description: t("AcademMediaDescription.text"),
-      dateFrom: "Jul 2015",
-      dateTo: "Aug 2015",
-    },
-  ];
-
-  const educations = [
-    {
-      name: t("NSU.text"),
-      urls: [
-        {
-          link: "https://english.nsu.ru/",
-          name: "nsu.ru",
-        },
-      ],
-      dateFrom: "2012",
-      dateTo: "2016",
-      description: t("NSUDescription.text"),
-      mainCourses: [
-        {
-          name: t("AlgebraAndNumberTheory.text"),
-        },
-        {
-          name: t("MathematicalLogicAndFoundationsMathematics.text"),
-        },
-        {
-          name: t("ProbabilityTheoryAndMathematicalStatistics.text"),
-        },
-        {
-          name: t("MathematicalAndFunctionalAnalysis.text"),
-        },
-        {
-          name: t("GeometryAndTopology.text"),
-        },
-        {
-          name: t("DifferentialEquationsAndMathematicalPhysics.text"),
-        },
-        {
-          name: t("ComputabilityTheoryAndTheoryOfAlgorithms.text"),
-        },
-        {
-          name: t("Programming.text"),
-        },
-      ],
-    },
-  ];
-
-  const interests = [
-    {
-      name: t("Futuramaapi.text"),
-      description: t("FuturamaapiDescription.text"),
-      urls: [
-        {
-          link: "https://futuramaapi.com",
-          name: "futuramaapi.com",
-        },
-      ],
-    },
-    {
-      name: t("Qworpa.text"),
-      description: t("QworpaDescription.text"),
-      urls: [
-        {
-          link: "https://qworpa.com",
-          name: "qworpa.com",
-        },
-      ],
-    },
-    {
-      name: t("BrosFiles.text"),
-      description: t("BrosFilesDescription.text"),
-      urls: [
-        {
-          link: "https://brosfiles.com",
-          name: "brosfiles.com",
-        },
-      ],
-    },
-    {
-      name: t("Koldakov.text"),
-      description: t("KoldakovDescription.text"),
-      urls: [
-        {
-          link: "https://koldakov.com",
-          name: "koldakov.com",
-        },
-      ],
-    },
-  ];
-
-  const getChuckNorrisFact = () => {
-    setGetNewDisabled(true);
-    fetch("https://api.chucknorris.io/jokes/random")
-      .then((response) => response.json())
-      .then((json) => {
-        setChuckNorrisFact(json["value"]);
-      })
-      .catch((error) => {
-        console.error(error);
-        setChuckNorrisFact(t("UnknownHTTPError.text"));
-      })
-      .finally(() => setGetNewDisabled(false));
-  };
-
-  const handleCloseChuckNorrisFact = () => {
-    setShowChuckNorrisFact(false);
-    setChuckNorrisFact("...");
-  };
-
-  const handleShowChuckNorrisFact = () => {
-    getChuckNorrisFact();
-    setShowChuckNorrisFact(true);
-  };
+  const saveCV = () => saveAs(cv, "Koldakov_Ivan_CV.pdf");
 
   return (
-    <>
-      <Row>
-        <Col sm={3}>
-          <Card>
-            <Card.Img variant="top" src={profileImage} />
-            <ButtonGroup className="d-flex" vertical>
-              <Button
-                className="btn-block mt-3"
-                variant="danger"
-                onClick={saveCV}
-              >
-                {t("DownloadCV.text")}
-              </Button>
-              <Button
-                className="mt-2"
-                variant="success"
-                onClick={handleShowChuckNorrisFact}
-              >
-                {t("GetChuckNorrisFact.text")}
-              </Button>
-            </ButtonGroup>
-          </Card>
-        </Col>
-        <Col sm={9}>
-          <Card>
-            <Card.Body>
-              <Card.Title>{t("HomeProfileTitle.text")}</Card.Title>
-              <Card.Text>{t("HomeProfileDescription.text")}</Card.Text>
-              <hr />
-              <Card.Title>{t("Skills.text")}</Card.Title>
-              <div style={{ maxWidth: 600 }}>
-                <Card.Text>
-                  {skills.map((skill, i) => (
-                    <a href={skill.link} key={i} target="_blank">
-                      <Badge bg="success" pill>
-                        {skill.name}
-                      </Badge>
-                    </a>
+    <div className="profile">
+      <aside className="profile-sidebar">
+        <div className="profile-photo-wrap">
+          {isLoading ? (
+            <Skeleton height={260} />
+          ) : (
+            <img src={profileImage} alt="Ivan Koldakov" className="profile-photo" />
+          )}
+        </div>
+        <button className="cv-button" onClick={saveCV}>
+          {t("DownloadCV.text")}
+        </button>
+      </aside>
+
+      <main className="profile-content">
+        <section className="section section--hero">
+          {isLoading ? (
+            <>
+              <Skeleton width="55%" height="2rem" />
+              <Skeleton height="0.9rem" />
+              <Skeleton width="90%" height="0.9rem" />
+              <Skeleton width="75%" height="0.9rem" />
+            </>
+          ) : (
+            <>
+              <h1 className="profile-name">{data?.title}</h1>
+              <p className="profile-bio">{data?.description}</p>
+            </>
+          )}
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">{t("Skills.text")}</h2>
+          <div className="skills-list">
+            {isLoading
+              ? Array.from({ length: 8 }).map((_, i) => (
+                  <Skeleton
+                    key={i}
+                    inline
+                    width={`${55 + (i % 5) * 18}px`}
+                    height="24px"
+                  />
+                ))
+              : data?.skills.map((skill, i) => (
+                  <a
+                    key={i}
+                    href={skill.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="skill-tag"
+                  >
+                    {skill.name}
+                  </a>
+                ))}
+          </div>
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">{t("Experience.text")}</h2>
+          {isLoading
+            ? Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="entry">
+                  <Skeleton width="50%" height="1rem" />
+                  <Skeleton width="28%" height="0.8rem" />
+                  <Skeleton height="0.85rem" />
+                  <Skeleton width="92%" height="0.85rem" />
+                </div>
+              ))
+            : data?.experiences.map((exp, i) => (
+                <div key={i} className="entry">
+                  <h3 className="entry-name">{exp.name}</h3>
+                  <span className="entry-dates">
+                    {exp.dateFrom} — {exp.dateTo}
+                  </span>
+                  <div className="entry-links">
+                    {exp.urls?.map((url, j) => (
+                      <Link
+                        key={j}
+                        to={url.link}
+                        target="_blank"
+                        className="entry-link"
+                      >
+                        {url.name}
+                      </Link>
+                    ))}
+                  </div>
+                  <p className="entry-desc">{exp.description}</p>
+                </div>
+              ))}
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">{t("Education.text")}</h2>
+          {isLoading ? (
+            <div className="entry">
+              <Skeleton width="58%" height="1rem" />
+              <Skeleton width="22%" height="0.8rem" />
+              <Skeleton height="0.85rem" />
+            </div>
+          ) : (
+            data?.educations.map((edu, i) => (
+              <div key={i} className="entry">
+                <h3 className="entry-name">{edu.name}</h3>
+                <span className="entry-dates">
+                  {edu.dateFrom} — {edu.dateTo}
+                </span>
+                <div className="entry-links">
+                  {edu.urls?.map((url, j) => (
+                    <Link
+                      key={j}
+                      to={url.link}
+                      target="_blank"
+                      className="entry-link"
+                    >
+                      {url.name}
+                    </Link>
                   ))}
-                </Card.Text>
+                </div>
+                <p className="entry-desc">{edu.description}</p>
+                <ul className="course-list">
+                  {edu.mainCourses.map((course, j) => (
+                    <li key={j}>{course}</li>
+                  ))}
+                </ul>
               </div>
-              <hr />
-              <Card.Title>{t("Experience.text")}</Card.Title>
-              {experiences.map((experience, i) => (
-                <div key={i}>
-                  <Card.Title className="text-muted">
-                    {experience.name}
-                  </Card.Title>
-                  <em className="text-muted">
-                    {experience.dateFrom} - {experience.dateTo}
-                  </em>
-                  {experience.urls ? (
-                    experience.urls.map((url, j) => (
-                      <div key={j}>
-                        <Link
-                          className="link-primary"
-                          to={url.link}
-                          target="_blank"
-                        >
-                          {url.name}
-                        </Link>
-                      </div>
-                    ))
-                  ) : (
-                    <></>
-                  )}
-                  <Card.Text className="mb-3 pt-3">
-                    {experience.description}
-                  </Card.Text>
+            ))
+          )}
+        </section>
+
+        <section className="section section--last">
+          <h2 className="section-title">{t("Interests.text")}</h2>
+          <p className="section-intro">{t("InterestsDescription.text")}</p>
+          {isLoading
+            ? Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="entry">
+                  <Skeleton width="38%" height="1rem" />
+                  <Skeleton width="70%" height="0.85rem" />
+                  <Skeleton width="25%" height="0.8rem" />
                 </div>
-              ))}
-              <hr />
-              <Card.Title>{t("Education.text")}</Card.Title>
-              {educations.map((education, i) => (
-                <div key={i}>
-                  <Card.Title className="text-muted">
-                    {education.name}
-                  </Card.Title>
-                  <em className="text-muted">
-                    {education.dateFrom} - {education.dateTo}
-                  </em>
-                  <Card.Text>{education.description}</Card.Text>
-                  <ul>
-                    {education.mainCourses.map((course, j) => (
-                      <li key={j}>{course.name}</li>
-                    ))}
-                  </ul>
-                  {education.urls ? (
-                    education.urls.map((url, j) => (
-                      <div key={j}>
-                        <Link
-                          className="link-primary d-block"
-                          to={url.link}
-                          target="_blank"
-                        >
-                          {url.name}
-                        </Link>
-                      </div>
-                    ))
-                  ) : (
-                    <></>
-                  )}
-                </div>
-              ))}
-              <hr />
-              <Card.Title>{t("Interests.text")}</Card.Title>
-              <Card.Text>{t("InterestsDescription.text")}</Card.Text>
-              {interests.map((interest, i) => (
-                <div key={i}>
-                  <Card.Title className="text-muted">
-                    {interest.name}
-                  </Card.Title>
-                  <Card.Text>{interest.description}</Card.Text>
-                  <ul>
+              ))
+            : data?.interests.map((interest, i) => (
+                <div key={i} className="entry">
+                  <h3 className="entry-name">{interest.name}</h3>
+                  <p className="entry-desc">{interest.description}</p>
+                  <div className="entry-links">
                     {interest.urls.map((url, j) => (
-                      <li key={j}>
-                        <div>
-                          <Link
-                            className="link-primary"
-                            to={url.link}
-                            target="_blank"
-                          >
-                            {url.name}
-                          </Link>
-                        </div>
-                      </li>
+                      <Link
+                        key={j}
+                        to={url.link}
+                        target="_blank"
+                        className="entry-link"
+                      >
+                        {url.name}
+                      </Link>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-      <Modal show={showChuckNorrisFact} onHide={handleCloseChuckNorrisFact}>
-        <Modal.Body>{chuckNorrisFact}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseChuckNorrisFact}>
-            {t("Close.text")}
-          </Button>
-          <Button
-            variant="success"
-            onClick={getChuckNorrisFact}
-            disabled={getNewDisabled}
-          >
-            {t("GetNew.text")}
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+        </section>
+      </main>
+    </div>
   );
 };
