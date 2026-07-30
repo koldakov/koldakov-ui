@@ -143,6 +143,12 @@ const staticData: ProfileData = {
       description: "Koldakov is my profile site.",
       urls: [{ link: "https://koldakov.com", name: "koldakov.com" }],
     },
+    {
+      name: "PulseSub",
+      description:
+        "Pulse your space, echo your voice. PulseSub is a community platform where posts (Pulses) and replies (Echoes) keep every space alive.",
+      urls: [{ link: "https://pulsesub.com", name: "pulsesub.com" }],
+    },
   ],
 };
 
