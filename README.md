@@ -4,7 +4,10 @@ Personal profile website.
 
 ## Installation
 
-1. `git clone https://github.com/koldakov/koldakov`.
+1. `git clone https://github.com/koldakov/koldakov-ui`.
+2. `cd koldakov-ui`
+3. `npm install`
+4. `npm audit fix --force`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
